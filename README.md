@@ -1,6 +1,7 @@
 # Mental Maze Online Survey 🏗️ (Under Construction) 👷🏼‍♂️ 
 
-Software Engineering Team: <br>
+<mark>Software Engineering Team: </mark>
+<br>
 Dilafruz Shamsieva <br>
 Rogena Khella <br>
 Wyatt Nugent <br>
