@@ -1,9 +1,9 @@
 # Mental Maze Online Survey
 
 Team members:
-Dilafruz Shamsieva
-Rogena Khella
-Wyatt Nugent
-Gurjeet Singh
+Dilafruz Shamsieva </n>
+Rogena Khella </n>
+Wyatt Nugent </n>
+Gurjeet Singh </n>
 Zach Taylor (Team Leader)
 
