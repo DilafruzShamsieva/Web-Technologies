@@ -1,6 +1,6 @@
 # Mental Maze Online Survey 🏗️ (Under Construction) 👷🏼‍♂️ 
 
-<mark> Software Engineering Team: </mark>
+<b> Software Engineering Team: </b>
 <br>
 Dilafruz Shamsieva <br>
 Rogena Khella <br>
