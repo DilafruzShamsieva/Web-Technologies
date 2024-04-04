@@ -1,5 +1,5 @@
-Project title:
-Description: 
+Project title: Mental Maze: Navigating the Depths of the Mind
+Description: This survey aims to explore various aspects of your personality through a series of questions. By considering your responses, you'll gain insight into your unique traits and tendencies.
 
 This will be where we will have the questions for the survey
 
