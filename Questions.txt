@@ -2,3 +2,82 @@ Project title:
 Description: 
 
 This will be where we will have the questions for the survey
+
+
+Example of questions:
+
+**Personality Test**
+
+Instructions: For each question, choose the option that best describes you. Keep track of your answers to each question, as you will use them to determine your personality profile at the end.
+
+1. When faced with a problem, I prefer to:
+   a) Analyze it thoroughly before taking action.
+   b) Trust my instincts and jump into finding a solution.
+   c) Seek advice from others before making a decision.
+
+2. In social situations, I am more likely to:
+   a) Engage in deep conversations with a few close friends.
+   b) Enjoy being the center of attention and meeting new people.
+   c) Blend into the crowd and observe rather than actively participate.
+
+3. When making plans, I tend to:
+   a) Follow a detailed schedule to ensure everything is organized.
+   b) Be spontaneous and go with the flow.
+   c) Make flexible plans that allow for changes and surprises.
+
+4. In my free time, I enjoy activities that are:
+   a) Thought-provoking and intellectually stimulating.
+   b) Exciting and adventurous.
+   c) Relaxing and laid-back.
+
+5. When facing a challenge, my initial reaction is to:
+   a) Think logically and come up with a strategic approach.
+   b) Dive in headfirst and figure it out along the way.
+   c) Seek support from friends or loved ones.
+
+6. When working on a team project, I am most likely to:
+   a) Take charge and delegate tasks to ensure efficiency.
+   b) Contribute my ideas and collaborate closely with others.
+   c) Support my teammates and offer assistance as needed.
+
+7. When it comes to decision-making, I value:
+   a) Rationality and logical reasoning.
+   b) Intuition and gut feelings.
+   c) Consensus and input from others.
+
+8. My approach to handling stress is to:
+   a) Break down tasks into manageable steps and tackle them one by one.
+   b) Embrace the challenge and push through with determination.
+   c) Take a step back, relax, and practice self-care activities.
+
+9. I feel most fulfilled when:
+   a) I achieve my goals and make progress in my endeavors.
+   b) I experience new things and embrace spontaneity.
+   c) I connect with others and make a positive impact in their lives.
+
+10. When it comes to rules and regulations, I:
+   a) Prefer to follow them closely to maintain order and stability.
+   b) Don't mind bending the rules if it means achieving a greater outcome.
+   c) Believe rules are guidelines and may be flexible depending on the situation.
+
+**Scoring:**
+For each question, assign yourself the following points based on your answer:
+- a) = 2 points
+- b) = 3 points
+- c) = 1 point
+
+**Interpreting Your Results:**
+Add up your points for each category:
+- Total points for "a" answers: _____
+- Total points for "b" answers: _____
+- Total points for "c" answers: _____
+
+Now, compare your scores in each category to the following personality profiles:
+
+- **Analytical Thinker**: High score in "a" answers, indicating a preference for logic and rationality.
+- **Free Spirit**: High score in "b" answers, suggesting a spontaneous and adventurous nature.
+- **Harmonizer**: High score in "c" answers, reflecting a desire for harmony and collaboration.
+
+
+
+
