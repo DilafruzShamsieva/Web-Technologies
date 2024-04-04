@@ -1,6 +1,6 @@
 # Mental Maze Online Survey
 
-Team members:
+Team members: <br>
 Dilafruz Shamsieva <br>
 Rogena Khella <br>
 Wyatt Nugent <br>
