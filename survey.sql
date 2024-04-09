@@ -1,10 +1,13 @@
 --sql file for database
+#DROP DATABASE IF EXISTS Survey;
 
---USE CSCI4410;
+CREATE DATABASE IF NOT EXISTS Survey;
 
---DROP TABLE IF EXISTS Products;
+USE Survey;
 
-CREATE TABLE Products(
+DROP TABLE IF EXISTS Products;
+
+CREATE TABLE Results(
 	Taker_Name VARCHAR(50),
 	Question_One INT(1),
   Question_Two INT(1),
