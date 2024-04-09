@@ -1,11 +1,10 @@
---sql file for database
 #DROP DATABASE IF EXISTS Survey;
 
 CREATE DATABASE IF NOT EXISTS Survey;
 
 USE Survey;
 
-DROP TABLE IF EXISTS Products;
+DROP TABLE IF EXISTS Results;
 
 CREATE TABLE Results(
 	Taker_Name VARCHAR(50),
