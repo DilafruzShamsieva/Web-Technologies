@@ -20,3 +20,8 @@ CREATE TABLE Results(
   Question_Nine INT(1),
   Question_Ten INT(1),
 );
+
+INSERT INTO Results
+VALUES ('example1', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+       ('example2', 5, 5, 5, 5, 5, 5, 5, 5, 5, 5),
+       
