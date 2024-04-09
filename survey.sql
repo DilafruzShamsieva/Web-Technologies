@@ -22,5 +22,5 @@ CREATE TABLE Results(
 
 INSERT INTO Results
 VALUES ('example1', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-       ('example2', 5, 5, 5, 5, 5, 5, 5, 5, 5, 5),
+       ('example2', 5, 5, 5, 5, 5, 5, 5, 5, 5, 5);
        
