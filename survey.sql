@@ -16,5 +16,4 @@ CREATE TABLE Products(
   Question_Eight INT(1),
   Question_Nine INT(1),
   Question_Ten INT(1),
-	
 );
