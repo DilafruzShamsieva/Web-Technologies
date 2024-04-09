@@ -1,6 +1,5 @@
 #main php file
 <!--This  will be the start of the Project-->
-<!-- This is a comment-->
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,6 +10,8 @@
     </head>
     
     <body>
+
+    
         
     </body>
     
