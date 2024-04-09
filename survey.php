@@ -9,10 +9,10 @@
     </head>
     
     <body>
-
-      <h2>Survey Form</h2>
+      <!--We also want to ask about the gender of the person taking the survey-->
+      <h2>Mental Maze Survey</h2>
         <form method="post" action="survey_process.php">
-        <p>Question 1: Do you agree with the statement?</p>
+        <p>Question 1: You are not too interested in discussions about various interpretations of creative works.</p>
         <input type="radio" name="question1" value="Strongly Disagree"> Strongly Disagree<br>
         <input type="radio" name="question1" value="Disagree"> Disagree<br>
         <input type="radio" name="question1" value="Somewhat"> Somewhat<br>
@@ -21,7 +21,7 @@
         <br>
       
         <form method="post" action="survey_process.php">
-        <p>Question 2: Do you agree with the statement?</p>
+        <p>Question 2: You enjoy solitary hobbies or activities more than group ones.</p>
         <input type="radio" name="question1" value="Strongly Disagree"> Strongly Disagree<br>
         <input type="radio" name="question1" value="Disagree"> Disagree<br>
         <input type="radio" name="question1" value="Somewhat"> Somewhat<br>
