@@ -17,7 +17,7 @@ CREATE TABLE Results(
   Question_Seven INT(8),
   Question_Eight INT(8),
   Question_Nine INT(8),
-  Question_Ten INT(8),
+  Question_Ten INT(8)
 );
 
 INSERT INTO Results
