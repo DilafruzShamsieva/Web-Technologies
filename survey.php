@@ -10,6 +10,8 @@
     
     <body>
       <!--We also want to ask about the gender of the person taking the survey-->
+      <!--Welcome page that has the name of the test taker and developer list-->
+      <!-- Ask for a name before displaying the questions-->
       <h2>Mental Maze Survey</h2>
         <form method="post" action="survey_process.php">
         <p>Question 1: You are not too interested in discussions about various interpretations of creative works.</p>
