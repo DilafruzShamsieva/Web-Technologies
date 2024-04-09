@@ -30,7 +30,7 @@
         <br>
 
         <form method="post" action="survey_process.php">
-        <p>Question 3: Do you agree with the statement?</p>
+        <p>Question 3: You can easily connect with people you have just met.</p>
         <input type="radio" name="question1" value="Strongly Disagree"> Strongly Disagree<br>
         <input type="radio" name="question1" value="Disagree"> Disagree<br>
         <input type="radio" name="question1" value="Somewhat"> Somewhat<br>
@@ -39,7 +39,7 @@
         <br>
 
         <form method="post" action="survey_process.php">
-        <p>Question 4: Do you agree with the statement?</p>
+        <p>Question 4: Your emotions control you more than you control them.</p>
         <input type="radio" name="question1" value="Strongly Disagree"> Strongly Disagree<br>
         <input type="radio" name="question1" value="Disagree"> Disagree<br>
         <input type="radio" name="question1" value="Somewhat"> Somewhat<br>
@@ -48,7 +48,7 @@
         <br>
 
         <form method="post" action="survey_process.php">
-        <p>Question 5: Do you agree with the statement?</p>
+        <p>Question 5: When making decisions, you focus more on how the affected people might feel than on what is most logical or efficient.</p>
         <input type="radio" name="question1" value="Strongly Disagree"> Strongly Disagree<br>
         <input type="radio" name="question1" value="Disagree"> Disagree<br>
         <input type="radio" name="question1" value="Somewhat"> Somewhat<br>
@@ -57,7 +57,7 @@
         <br>
 
         <form method="post" action="survey_process.php">
-        <p>Question 6: Do you agree with the statement?</p>
+        <p>Question 6: You would love a job that requires you to work alone most of the time.</p>
         <input type="radio" name="question1" value="Strongly Disagree"> Strongly Disagree<br>
         <input type="radio" name="question1" value="Disagree"> Disagree<br>
         <input type="radio" name="question1" value="Somewhat"> Somewhat<br>
@@ -66,7 +66,7 @@
         <br>
 
         <form method="post" action="survey_process.php">
-        <p>Question 7: Do you agree with the statement?</p>
+        <p>Question 7: You prefer tasks that require you to come up with creative solutions rather than follow concrete steps.</p>
         <input type="radio" name="question1" value="Strongly Disagree"> Strongly Disagree<br>
         <input type="radio" name="question1" value="Disagree"> Disagree<br>
         <input type="radio" name="question1" value="Somewhat"> Somewhat<br>
@@ -75,7 +75,7 @@
         <br>
 
         <form method="post" action="survey_process.php">
-        <p>Question 8: Do you agree with the statement?</p>
+        <p>Question 8: You are more likely to rely on emotional intuition than logical reasoning when making a choice.</p>
         <input type="radio" name="question1" value="Strongly Disagree"> Strongly Disagree<br>
         <input type="radio" name="question1" value="Disagree"> Disagree<br>
         <input type="radio" name="question1" value="Somewhat"> Somewhat<br>
@@ -84,7 +84,7 @@
         <br>
 
         <form method="post" action="survey_process.php">
-        <p>Question 9: Do you agree with the statement?</p>
+        <p>Question 9: When faced with a problem, I prefer to trust my instincts and jump into finding a solution.</p>
         <input type="radio" name="question1" value="Strongly Disagree"> Strongly Disagree<br>
         <input type="radio" name="question1" value="Disagree"> Disagree<br>
         <input type="radio" name="question1" value="Somewhat"> Somewhat<br>
@@ -93,7 +93,7 @@
         <br>
 
         <form method="post" action="survey_process.php">
-        <p>Question 10: Do you agree with the statement?</p>
+        <p>Question 10: When making plans, I tend to be spontaneous and go with the flow.</p>
         <input type="radio" name="question1" value="Strongly Disagree"> Strongly Disagree<br>
         <input type="radio" name="question1" value="Disagree"> Disagree<br>
         <input type="radio" name="question1" value="Somewhat"> Somewhat<br>
