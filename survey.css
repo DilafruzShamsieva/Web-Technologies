@@ -1,1 +1,36 @@
-/*CSS file for survey*/
+body {
+    -webkit-text-size-adjust: 100%;
+    font-family: calluna, "Times New Roman", serif;
+    color: #082730;
+    font-size: 20px;
+    line-height: 24px;
+    box-sizing: border-box;
+    margin: 0;
+    background-color: #fdf5f0;
+}
+
+h2 {
+    text-align: center;
+    border-bottom: solid 2px #fff;
+    padding: 50px 10px 58px;
+    display: block;
+    padding-top: 23px;
+    padding-bottom: 22px;
+}
+
+p {
+    text-align: center;
+}
+
+input[type="text"], input[type="radio"], button {
+    display: block;
+    margin: 0 auto;
+}
+
+button {
+    margin-top: 10px;
+}
+
+#surveyQuestions {
+    display: none;
+}
