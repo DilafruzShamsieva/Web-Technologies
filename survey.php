@@ -107,7 +107,50 @@
 
         <!--We are going to add 5 more questions -->
         
+        <form method="post" action="survey_process.php">
+        <p>Question 11: You find it challenging to express your emotions verbally.</p>
+        <input type="radio" name="question10" value="Strongly Disagree"> Strongly Disagree<br>
+        <input type="radio" name="question10" value="Disagree"> Disagree<br>
+        <input type="radio" name="question10" value="Somewhat"> Somewhat<br>
+        <input type="radio" name="question10" value="Agree"> Agree<br>
+        <input type="radio" name="question10" value="Strongly Agree"> Strongly Agree<br>
+        <br>
 
+        <form method="post" action="survey_process.php">
+        <p>Question 12: You feel energized after spending time alone, rather than drained.</p>
+        <input type="radio" name="question10" value="Strongly Disagree"> Strongly Disagree<br>
+        <input type="radio" name="question10" value="Disagree"> Disagree<br>
+        <input type="radio" name="question10" value="Somewhat"> Somewhat<br>
+        <input type="radio" name="question10" value="Agree"> Agree<br>
+        <input type="radio" name="question10" value="Strongly Agree"> Strongly Agree<br>
+        <br>
+
+        <form method="post" action="survey_process.php">
+        <p>Question 13: You often find yourself daydreaming or lost in thought.</p>
+        <input type="radio" name="question10" value="Strongly Disagree"> Strongly Disagree<br>
+        <input type="radio" name="question10" value="Disagree"> Disagree<br>
+        <input type="radio" name="question10" value="Somewhat"> Somewhat<br>
+        <input type="radio" name="question10" value="Agree"> Agree<br>
+        <input type="radio" name="question10" value="Strongly Agree"> Strongly Agree<br>
+        <br>
+
+        <form method="post" action="survey_process.php">
+        <p>Question 14: You prefer exploring new ideas and concepts rather than sticking to familiar routines.</p>
+        <input type="radio" name="question10" value="Strongly Disagree"> Strongly Disagree<br>
+        <input type="radio" name="question10" value="Disagree"> Disagree<br>
+        <input type="radio" name="question10" value="Somewhat"> Somewhat<br>
+        <input type="radio" name="question10" value="Agree"> Agree<br>
+        <input type="radio" name="question10" value="Strongly Agree"> Strongly Agree<br>
+        <br>
+
+        <form method="post" action="survey_process.php">
+        <p>Question 15: You believe that intuition plays a significant role in decision-making, alongside logic and reason.</p>
+        <input type="radio" name="question10" value="Strongly Disagree"> Strongly Disagree<br>
+        <input type="radio" name="question10" value="Disagree"> Disagree<br>
+        <input type="radio" name="question10" value="Somewhat"> Somewhat<br>
+        <input type="radio" name="question10" value="Agree"> Agree<br>
+        <input type="radio" name="question10" value="Strongly Agree"> Strongly Agree<br>
+        <br>
 
 
         <input type="submit" value="Submit">
