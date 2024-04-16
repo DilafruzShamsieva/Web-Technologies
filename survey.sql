@@ -17,10 +17,15 @@ CREATE TABLE Results(
   Question_Seven INT(8),
   Question_Eight INT(8),
   Question_Nine INT(8),
-  Question_Ten INT(8)
+  Question_Ten INT(8),
+  Question_Eleven INT(8),
+  Question_Twelve INT(8),
+  Question_Thirteen INT(8),
+  Question_Fourteen INT(8),
+  Question_Fifteen INT(8)
 );
 
 INSERT INTO Results
-VALUES ('example1', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-       ('example2', 5, 5, 5, 5, 5, 5, 5, 5, 5, 5);
+VALUES ('example1', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+       ('example2', 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5);
        
