@@ -8,7 +8,11 @@
   </head>
 
   <body>
-    <h2>Mental Maze Survey</h2>
+    <h2>Welcome to Mental Maze Survey</h2>
+    <form>
+      <input type="radio" name="female" value="female">Female
+      <input type="radio" name="male" value="male">Male
+    </form>
 
     <!-- Survey questions - Page 1 -->
     <form id="survey-form-page1" method="post" action="survey_process.php">
