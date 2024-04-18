@@ -210,7 +210,6 @@
 			echo "Connected successfully";
 
 
-			
 			$conn->close(); //disconnect from the MySQL database
 		?>
 

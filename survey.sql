@@ -7,7 +7,9 @@ USE Survey;
 DROP TABLE IF EXISTS Results;
 
 CREATE TABLE Results(
+
 	Taker_Name VARCHAR(50),
+  Survey_Gender VARCHAR(50),
 	Question_One INT(8),
   Question_Two INT(8),
   Question_Three INT(8),
@@ -22,10 +24,11 @@ CREATE TABLE Results(
   Question_Twelve INT(8),
   Question_Thirteen INT(8),
   Question_Fourteen INT(8),
-  Question_Fifteen INT(8)
+  Question_Fifteen INT(8),
+  Result_Score INT(8)
 );
 
 INSERT INTO Results
-VALUES ('example1', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-       ('example2', 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5);
+VALUES ('example1',"MALE", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 15),
+       ('example2', "FEMALE",5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 75);
        
