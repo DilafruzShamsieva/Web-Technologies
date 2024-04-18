@@ -208,7 +208,36 @@
 					die("Connection failed: " . $conn->connect_error);
 			}
 			echo "Connected successfully";
-
+      echo $question1;
+      echo "<br>";
+      echo $question2;
+      echo "<br>";
+      echo $question3;
+      echo "<br>";
+      echo $question4;
+      echo "<br>";
+      echo $question5;
+      echo "<br>";
+      echo $question6;
+      echo "<br>";
+      echo $question7;
+      echo "<br>";
+      echo $question8;
+      echo "<br>";
+      echo $question9;
+      echo "<br>";
+      echo $question10;
+      echo "<br>";
+      echo $question11;
+      echo "<br>";
+      echo $question12;
+      echo "<br>";
+      echo $question13;
+      echo "<br>";
+      echo $question14;
+      echo "<br>";
+      echo $question15;
+      echo "<br>";
 
 			$conn->close(); //disconnect from the MySQL database
 		?>
