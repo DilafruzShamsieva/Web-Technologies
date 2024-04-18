@@ -192,5 +192,27 @@
         });
       });
     </script>
+
+    <?php
+			$servername = "localhost";
+			$username = "root";
+			$password = "";
+			
+			// Connect to MySQL Database Server Using mysqli
+		  // Object Oriented way
+			$conn = new mysqli($servername, $username, $password);
+			
+			// Check connection
+			if ($conn->connect_error) {
+				       //Print a message and terminate the current script
+					die("Connection failed: " . $conn->connect_error);
+			}
+			echo "Connected successfully";
+
+
+			
+			$conn->close(); //disconnect from the MySQL database
+		?>
+
   </body>
 </html>
