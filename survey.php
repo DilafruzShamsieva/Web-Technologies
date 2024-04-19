@@ -1,4 +1,5 @@
 <!--I have update the file please take a look at it-->
+<!--I have add the part to calculate the result-->
 <!DOCTYPE html>
 <html>
   <head>
@@ -54,7 +55,7 @@
       }
 
       /* Add continue button styling */
-      #continue-btn {
+      .continue-button {
         margin-top: 30px;
         padding: 15px 30px;
         background-color: #ff9800;
@@ -67,8 +68,17 @@
         transition: background-color 0.3s ease;
       }
 
-      #continue-btn:hover {
+      .continue-button:hover {
         background-color: #f57c00;
+      }
+
+      /* Result section */
+      #result {
+        display: none;
+        margin-top: 30px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
       }
     </style>
   </head>
@@ -285,6 +295,8 @@
     <div class="survey-page" id="survey-page3" style="display: none">
       <form id="survey-form-page3">
         <!-- Add next 5 questions here -->
+        <!-- Add a hidden input field to store the total score -->
+        <input type="hidden" id="total-score" name="total-score" value="0" />
 
         <p>
           Question 11: You find it challenging to express your emotions
@@ -379,66 +391,175 @@
       </form>
     </div>
 
-    <!-- Survey questions - Page 4 -->
-    <div class="survey-page" id="survey-page4" style="display: none">
-      <form id="survey-form-page4">
-        <!-- Add last question here -->
-        <!-- Question 16 -->
-      </form>
+    <!-- Result section -->
+    <div id="result">
+      <h2>Survey Result</h2>
+      <p id="result-text"></p>
     </div>
 
     <!-- jQuery script for handling page transitions -->
     <script>
-      const ratingBoxes = document.querySelectorAll(".rating-box");
+      $(document).ready(function () {
+        // Function to update the rating display
+        function updateRating(box, rating) {
+          box.dataset.rating = rating;
+          box.querySelector(".rating-bar").style.width = rating + "%";
+          box.querySelector(".rating-label").textContent = rating + "%";
+        }
 
-      ratingBoxes.forEach((box) => {
-        box.addEventListener("mousemove", function (e) {
+        // Update ratings when mouse moves over rating box
+        $(".rating-box").on("mousemove", function (e) {
           const rect = this.getBoundingClientRect();
           const rating = Math.round(
             ((e.clientX - rect.left) / this.offsetWidth) * 100
           );
           if (rating >= 0 && rating <= 100) {
-            this.dataset.rating = rating;
-            this.querySelector(".rating-bar").style.width = rating + "%";
-            this.querySelector(".rating-label").textContent = rating + "%";
+            updateRating(this, rating);
           }
         });
-      });
-
-      $(document).ready(function () {
-        // Hide all survey pages except the first one
-        $(".survey-page").hide();
-        $("#gender-page").show();
 
         // Gender selection form submission
         $("#gender-continue-button").click(function (e) {
           e.preventDefault();
           $("#gender-page").hide();
-          $("#survey-page1").show();
+          $("#survey-page1").show(); // Show the first page of survey questions
         });
 
         // Continue button click event handler for Page 1
         $("#survey-page1 .continue-button").click(function (e) {
           e.preventDefault();
           $("#survey-page1").hide();
-          $("#survey-page2").show();
+          $("#survey-page2").show(); // Show the second page of survey questions
         });
 
         // Continue button click event handler for Page 2
         $("#survey-page2 .continue-button").click(function (e) {
           e.preventDefault();
           $("#survey-page2").hide();
-          $("#survey-page3").show();
+          $("#survey-page3").show(); // Show the third page of survey questions
         });
 
         // Continue button click event handler for Page 3
         $("#survey-page3 .continue-button").click(function (e) {
           e.preventDefault();
-          $("#survey-page3").hide();
-          $("#survey-page4").show();
+          // Calculate the total score
+          const totalScore = calculateTotalScore();
+          // Determine the result category and personality description
+          const result = determineResult(
+            totalScore,
+            $('input[name="gender"]:checked').val()
+          );
+          // Display the result
+          $("#result-text").text(
+            "Your result category is: " +
+              result.category +
+              ". " +
+              result.description
+          );
+          $("#result").show();
         });
+
+        // Handle form submission
+        $("#survey-form-page3").submit(function (e) {
+          // Prevent the default form submission
+          e.preventDefault();
+          // Calculate the total score
+          const totalScore = calculateTotalScore();
+          // Determine the result category and personality description
+          const result = determineResult(
+            totalScore,
+            $('input[name="gender"]:checked').val()
+          );
+          // Display the result
+          $("#result-text").text(
+            "Your result category is: " +
+              result.category +
+              ". " +
+              result.description
+          );
+          $("#result").show();
+          // Optionally, you can submit the form data here
+        });
+
+        // Placeholder function to calculate total score
+        function calculateTotalScore() {
+          // Placeholder implementation
+          let totalScore = 0;
+          $(".rating-box").each(function () {
+            const rating = parseInt($(this).data("rating"));
+            totalScore += rating;
+          });
+          return totalScore;
+        }
+
+        // Placeholder function to determine result category and personality description
+        function determineResult(totalScore, gender) {
+          const resultCategories = [
+            {
+              category: "Reserved",
+              minScore: 0,
+              maxScore: 200,
+              description:
+                "You tend to be reserved and introspective, preferring to spend time alone or with close friends rather than large groups.",
+            },
+            {
+              category: "Adventurous",
+              minScore: 201,
+              maxScore: 400,
+              description:
+                "You have an adventurous spirit, always seeking out new experiences and challenges to push your boundaries.",
+            },
+            {
+              category: "Empathetic",
+              minScore: 401,
+              maxScore: 600,
+              description:
+                "You are highly empathetic and compassionate, often putting the needs of others before your own and forming deep connections easily.",
+            },
+            {
+              category: "Analytical",
+              minScore: 601,
+              maxScore: 800,
+              description:
+                "You have a strong analytical mind, preferring logical reasoning and problem-solving to emotional intuition when making decisions.",
+            },
+            {
+              category: "Innovative",
+              minScore: 801,
+              maxScore: 1000,
+              description:
+                "You are highly innovative and creative, constantly generating new ideas and exploring unconventional solutions to challenges.",
+            },
+          ];
+
+          let resultCategory = "Unknown";
+          let description =
+            "We couldn't determine your personality type based on your responses.";
+
+          for (const category of resultCategories) {
+            if (
+              totalScore >= category.minScore &&
+              totalScore <= category.maxScore
+            ) {
+              resultCategory = category.category;
+              description = category.description;
+              break;
+            }
+          }
+
+          if (gender === "female") {
+            description +=
+              " As a female, you may also have strong nurturing instincts and empathy towards others.";
+          } else if (gender === "male") {
+            description +=
+              " As a male, you may also exhibit leadership qualities and a preference for problem-solving.";
+          }
+
+          return { category: resultCategory, description: description };
+        }
       });
     </script>
+
 	  
     <?php
 			$servername = "localhost";
