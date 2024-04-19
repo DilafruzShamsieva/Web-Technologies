@@ -1,3 +1,4 @@
+<!--I have update the file please take a look at it-->
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,194 +6,440 @@
     <link type="text/css" rel="stylesheet" href="survey.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="Survey.js"></script>
+
+    <style>
+      /* Your CSS styles here */
+      .rating-box {
+        width: 200px;
+        height: 50px;
+        border: none;
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 10px;
+        background: linear-gradient(to right, #5effa0, #00b4db);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .rating-bar {
+        height: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        transition: width 0.3s ease;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .rating-label {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        color: #fff;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Add hover effect */
+      .rating-box:hover .rating-bar {
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+
+      /* Add focus effect */
+      .rating-box:focus-within .rating-bar {
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+
+      /* Add continue button styling */
+      #continue-btn {
+        margin-top: 30px;
+        padding: 15px 30px;
+        background-color: #ff9800;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 20px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s ease;
+      }
+
+      #continue-btn:hover {
+        background-color: #f57c00;
+      }
+    </style>
   </head>
 
   <body>
     <h2>Welcome to Mental Maze Survey</h2>
-    <form>
-      <input type="radio" name="female" value="female">Female
-      <input type="radio" name="male" value="male">Male
-    </form>
+    <!-- Gender Selection Page -->
+    <div id="gender-page">
+      <form id="gender-form">
+        <input type="radio" name="gender" value="female" />Female
+        <input type="radio" name="gender" value="male" />Male
+        <button id="gender-continue-button">Continue</button>
+      </form>
+    </div>
 
     <!-- Survey questions - Page 1 -->
-    <form id="survey-form-page1" method="post" action="survey_process.php">
-      <form method="post" action="survey_process.php">
-        <p>Question 1: You are not too interested in discussions about various interpretations of creative works.</p>
-        <input type="radio" name="question1" value=1> Strongly Disagree<br>
-        <input type="radio" name="question1" value=2> Disagree<br>
-        <input type="radio" name="question1" value=3> Somewhat<br>
-        <input type="radio" name="question1" value=4> Agree<br>
-        <input type="radio" name="question1" value=5> Strongly Agree<br>
-        <br>
-      
-        
-        <p>Question 2: You enjoy solitary hobbies or activities more than group ones.</p>
-        <input type="radio" name="question2" value=1> Strongly Disagree<br>
-        <input type="radio" name="question2" value=2> Disagree<br>
-        <input type="radio" name="question2" value=3> Somewhat<br>
-        <input type="radio" name="question2" value=4> Agree<br>
-        <input type="radio" name="question2" value=5> Strongly Agree<br>
-        <br>
+    <div class="survey-page" id="survey-page1" style="display: none">
+      <form id="survey-form-page1">
+        <!-- Add first 5 questions here -->
+        <!-- Question 1 -->
+        <p>
+          Question 1: You are not too interested in discussions about various
+          interpretations of creative works.
+        </p>
+        <div class="slider-container">
+          <!-- Your rating box here -->
+          <label for="captivation-rating"></label>
+          <div
+            class="rating-box"
+            id="captivation-rating"
+            data-rating="50"
+            tabindex="0"
+          >
+            <div class="rating-bar"></div>
+            <span class="rating-label">50%</span>
+          </div>
+        </div>
 
-        
+        <!-- Question 2 -->
+        <p>
+          Question 2: You enjoy solitary hobbies or activities more than group
+          ones.
+        </p>
+        <div class="slider-container">
+          <!-- Your rating box here -->
+          <label for="captivation-rating"></label>
+          <div
+            class="rating-box"
+            id="captivation-rating"
+            data-rating="50"
+            tabindex="0"
+          >
+            <div class="rating-bar"></div>
+            <span class="rating-label">50%</span>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
         <p>Question 3: You can easily connect with people you have just met.</p>
-        <input type="radio" name="question3" value=1> Strongly Disagree<br>
-        <input type="radio" name="question3" value=2> Disagree<br>
-        <input type="radio" name="question3" value=3> Somewhat<br>
-        <input type="radio" name="question3" value=4> Agree<br>
-        <input type="radio" name="question3" value=5> Strongly Agree<br>
-        <br>
+        <div class="slider-container">
+          <!-- Your rating box here -->
+          <label for="captivation-rating"></label>
+          <div
+            class="rating-box"
+            id="captivation-rating"
+            data-rating="50"
+            tabindex="0"
+          >
+            <div class="rating-bar"></div>
+            <span class="rating-label">50%</span>
+          </div>
+        </div>
 
-        
+        <!-- Question 4 -->
         <p>Question 4: Your emotions control you more than you control them.</p>
-        <input type="radio" name="question4" value=1> Strongly Disagree<br>
-        <input type="radio" name="question4" value=2> Disagree<br>
-        <input type="radio" name="question4" value=3> Somewhat<br>
-        <input type="radio" name="question4" value=4> Agree<br>
-        <input type="radio" name="question4" value=5> Strongly Agree<br>
-        <br>
+        <div class="slider-container">
+          <!-- Your rating box here -->
+          <label for="captivation-rating"></label>
+          <div
+            class="rating-box"
+            id="captivation-rating"
+            data-rating="50"
+            tabindex="0"
+          >
+            <div class="rating-bar"></div>
+            <span class="rating-label">50%</span>
+          </div>
+        </div>
 
-        
-        <p>Question 5: When making decisions, you focus more on how the affected people might feel than on what is most logical or efficient.</p>
-        <input type="radio" name="question5" value=1> Strongly Disagree<br>
-        <input type="radio" name="question5" value=2> Disagree<br>
-        <input type="radio" name="question5" value=3> Somewhat<br>
-        <input type="radio" name="question5" value=4> Agree<br>
-        <input type="radio" name="question5" value=5> Strongly Agree<br>
-        <br>
+        <!-- Question 5 -->
+        <p>
+          Question 5: When making decisions, you focus more on how the affected
+          people might feel than on what is most logical or efficient.
+        </p>
+        <div class="slider-container">
+          <!-- Your rating box here -->
+          <label for="captivation-rating"></label>
+          <div
+            class="rating-box"
+            id="captivation-rating"
+            data-rating="50"
+            tabindex="0"
+          >
+            <div class="rating-bar"></div>
+            <span class="rating-label">50%</span>
+          </div>
+        </div>
+        <br />
 
-    </form>
+        <!-- Continue button -->
+        <button class="continue-button">Continue</button>
+      </form>
+    </div>
 
     <!-- Survey questions - Page 2 -->
-    <form
-      id="survey-form-page2"
-      method="post"
-      action="survey_process.php"
-      style="display: none"
-    >
-    <p>Question 6: You would love a job that requires you to work alone most of the time.</p>
-    <input type="radio" name="question8" value=1> Strongly Disagree<br>
-    <input type="radio" name="question8" value=2> Disagree<br>
-    <input type="radio" name="question8" value=3> Somewhat<br>
-    <input type="radio" name="question8" value=4> Agree<br>
-    <input type="radio" name="question8" value=5> Strongly Agree<br>
-    <br>
+    <div class="survey-page" id="survey-page2" style="display: none">
+      <form id="survey-form-page2">
+        <!-- Add next 5 questions here -->
+        <p>
+          Question 6: You would love a job that requires you to work alone most
+          of the time.
+        </p>
+        <div class="slider-container">
+          <label for="captivation-rating"></label>
+          <div
+            class="rating-box"
+            id="captivation-rating"
+            data-rating="50"
+            tabindex="0"
+          >
+            <div class="rating-bar"></div>
+            <span class="rating-label">50%</span>
+          </div>
+        </div>
 
-    
-    <p>Question 7: You prefer tasks that require you to come up with creative solutions rather than follow concrete steps.</p>
-    <input type="radio" name="question7" value=1> Strongly Disagree<br>
-    <input type="radio" name="question7" value=2> Disagree<br>
-    <input type="radio" name="question7" value=3> Somewhat<br>
-    <input type="radio" name="question7" value=4> Agree<br>
-    <input type="radio" name="question7" value=5> Strongly Agree<br>
-    <br>
+        <br />
+        <p>
+          Question 7: You prefer tasks that require you to come up with creative
+          solutions rather than follow concrete steps.
+        </p>
+        <div class="slider-container">
+          <label for="captivation-rating"></label>
+          <div
+            class="rating-box"
+            id="captivation-rating"
+            data-rating="50"
+            tabindex="0"
+          >
+            <div class="rating-bar"></div>
+            <span class="rating-label">50%</span>
+          </div>
+        </div>
 
-    
-    <p>Question 8: You are more likely to rely on emotional intuition than logical reasoning when making a choice.</p>
-    <input type="radio" name="question8" value=1> Strongly Disagree<br>
-    <input type="radio" name="question8" value=2> Disagree<br>
-    <input type="radio" name="question8" value=3> Somewhat<br>
-    <input type="radio" name="question8" value=4> Agree<br>
-    <input type="radio" name="question8" value=5> Strongly Agree<br>
-    <br>
+        <br />
+        <p>
+          Question 8: You are more likely to rely on emotional intuition than
+          logical reasoning when making a choice.
+        </p>
+        <div class="slider-container">
+          <label for="captivation-rating"></label>
+          <div
+            class="rating-box"
+            id="captivation-rating"
+            data-rating="50"
+            tabindex="0"
+          >
+            <div class="rating-bar"></div>
+            <span class="rating-label">50%</span>
+          </div>
+        </div>
+        <br />
 
-    
-    <p>Question 9: When faced with a problem, I prefer to trust my instincts and jump into finding a solution.</p>
-    <input type="radio" name="question9" value=1> Strongly Disagree<br>
-    <input type="radio" name="question9" value=2> Disagree<br>
-    <input type="radio" name="question9" value=3> Somewhat<br>
-    <input type="radio" name="question9" value=4> Agree<br>
-    <input type="radio" name="question9" value=5> Strongly Agree<br>
-    <br>
+        <p>
+          Question 9: When faced with a problem, I prefer to trust my instincts
+          and jump into finding a solution.
+        </p>
+        <div class="slider-container">
+          <label for="captivation-rating"></label>
+          <div
+            class="rating-box"
+            id="captivation-rating"
+            data-rating="50"
+            tabindex="0"
+          >
+            <div class="rating-bar"></div>
+            <span class="rating-label">50%</span>
+          </div>
+        </div>
+        <br />
 
-  
-    <p>Question 10: When making plans, I tend to be spontaneous and go with the flow.</p>
-    <input type="radio" name="question10" value=1> Strongly Disagree<br>
-    <input type="radio" name="question10" value=2> Disagree<br>
-    <input type="radio" name="question10" value=3> Somewhat<br>
-    <input type="radio" name="question10" value=4> Agree<br>
-    <input type="radio" name="question10" value=5> Strongly Agree<br>
-    <br>
-    </form>
+        <p>
+          Question 10: When making plans, I tend to be spontaneous and go with
+          the flow.
+        </p>
+        <div class="slider-container">
+          <label for="captivation-rating"></label>
+          <div
+            class="rating-box"
+            id="captivation-rating"
+            data-rating="50"
+            tabindex="0"
+          >
+            <div class="rating-bar"></div>
+            <span class="rating-label">50%</span>
+          </div>
+        </div>
+        <br />
+        <!-- Continue button -->
+        <button class="continue-button">Continue</button>
+      </form>
+    </div>
 
     <!-- Survey questions - Page 3 -->
-    <form
-      id="survey-form-page3"
-      method="post"
-      action="survey_process.php"
-      style="display: none"
-    >
-    <p>Question 11: You find it challenging to express your emotions verbally.</p>
-    <input type="radio" name="question11" value="Strongly Disagree"> Strongly Disagree<br>
-    <input type="radio" name="question11" value="Disagree"> Disagree<br>
-    <input type="radio" name="question11" value="Somewhat"> Somewhat<br>
-    <input type="radio" name="question11" value="Agree"> Agree<br>
-    <input type="radio" name="question11" value="Strongly Agree"> Strongly Agree<br>
-    <br>
+    <div class="survey-page" id="survey-page3" style="display: none">
+      <form id="survey-form-page3">
+        <!-- Add next 5 questions here -->
 
-    <p>Question 12: You feel energized after spending time alone, rather than drained.</p>
-    <input type="radio" name="question12" value=1> Strongly Disagree<br>
-    <input type="radio" name="question12" value=2> Disagree<br>
-    <input type="radio" name="question12" value=3> Somewhat<br>
-    <input type="radio" name="question12" value=4> Agree<br>
-    <input type="radio" name="question12" value=5> Strongly Agree<br>
-    <br>
+        <p>
+          Question 11: You find it challenging to express your emotions
+          verbally.
+        </p>
+        <div class="slider-container">
+          <label for="captivation-rating"></label>
+          <div
+            class="rating-box"
+            id="captivation-rating"
+            data-rating="50"
+            tabindex="0"
+          >
+            <div class="rating-bar"></div>
+            <span class="rating-label">50%</span>
+          </div>
+        </div>
 
-    <p>Question 13: You often find yourself daydreaming or lost in thought.</p>
-    <input type="radio" name="question13" value=1> Strongly Disagree<br>
-    <input type="radio" name="question13" value=2> Disagree<br>
-    <input type="radio" name="question13" value=3> Somewhat<br>
-    <input type="radio" name="question13" value=4> Agree<br>
-    <input type="radio" name="question13" value=5> Strongly Agree<br>
-    <br>
+        <br />
+        <p>
+          Question 12: You feel energized after spending time alone, rather than
+          drained.
+        </p>
+        <div class="slider-container">
+          <label for="captivation-rating"></label>
+          <div
+            class="rating-box"
+            id="captivation-rating"
+            data-rating="50"
+            tabindex="0"
+          >
+            <div class="rating-bar"></div>
+            <span class="rating-label">50%</span>
+          </div>
+        </div>
 
-    <p>Question 14: You prefer exploring new ideas and concepts rather than sticking to familiar routines.</p>
-    <input type="radio" name="question14" value=1> Strongly Disagree<br>
-    <input type="radio" name="question14" value=2> Disagree<br>
-    <input type="radio" name="question14" value=3> Somewhat<br>
-    <input type="radio" name="question14" value=4> Agree<br>
-    <input type="radio" name="question14" value=5> Strongly Agree<br>
-    <br>
+        <br />
+        <p>
+          Question 13: You often find yourself daydreaming or lost in thought.
+        </p>
+        <div class="slider-container">
+          <label for="captivation-rating"></label>
+          <div
+            class="rating-box"
+            id="captivation-rating"
+            data-rating="50"
+            tabindex="0"
+          >
+            <div class="rating-bar"></div>
+            <span class="rating-label">50%</span>
+          </div>
+        </div>
+        <br />
+        <p>
+          Question 14: You prefer exploring new ideas and concepts rather than
+          sticking to familiar routines.
+        </p>
+        <div class="slider-container">
+          <label for="captivation-rating"></label>
+          <div
+            class="rating-box"
+            id="captivation-rating"
+            data-rating="50"
+            tabindex="0"
+          >
+            <div class="rating-bar"></div>
+            <span class="rating-label">50%</span>
+          </div>
+        </div>
+        <br />
 
-    <p>Question 15: You believe that intuition plays a significant role in decision-making, alongside logic and reason.</p>
-    <input type="radio" name="question15" value=1> Strongly Disagree<br>
-    <input type="radio" name="question15" value=2> Disagree<br>
-    <input type="radio" name="question15" value=3> Somewhat<br>
-    <input type="radio" name="question15" value=4> Agree<br>
-    <input type="radio" name="question15" value=5> Strongly Agree<br>
-    <br>
-    </form>
+        <p>
+          Question 15: You believe that intuition plays a significant role in
+          decision-making, alongside logic and reason.
+        </p>
+        <div class="slider-container">
+          <label for="captivation-rating"></label>
+          <div
+            class="rating-box"
+            id="captivation-rating"
+            data-rating="50"
+            tabindex="0"
+          >
+            <div class="rating-bar"></div>
+            <span class="rating-label">50%</span>
+          </div>
+        </div>
+        <br />
 
-    <!-- Continue buttons -->
-    <button id="continue-button-page1">Continue</button>
-    <button id="continue-button-page2" style="display: none">Continue</button>
-    <input
-      type="submit"
-      value="Submit"
-      id="submit-button"
-      style="display: none"
-    />
+        <!-- Submit button -->
+        <input type="submit" value="Submit" id="submit-button" />
+      </form>
+    </div>
+
+    <!-- Survey questions - Page 4 -->
+    <div class="survey-page" id="survey-page4" style="display: none">
+      <form id="survey-form-page4">
+        <!-- Add last question here -->
+        <!-- Question 16 -->
+      </form>
+    </div>
 
     <!-- jQuery script for handling page transitions -->
     <script>
+      const ratingBoxes = document.querySelectorAll(".rating-box");
+
+      ratingBoxes.forEach((box) => {
+        box.addEventListener("mousemove", function (e) {
+          const rect = this.getBoundingClientRect();
+          const rating = Math.round(
+            ((e.clientX - rect.left) / this.offsetWidth) * 100
+          );
+          if (rating >= 0 && rating <= 100) {
+            this.dataset.rating = rating;
+            this.querySelector(".rating-bar").style.width = rating + "%";
+            this.querySelector(".rating-label").textContent = rating + "%";
+          }
+        });
+      });
+
       $(document).ready(function () {
-        $("#continue-button-page1").click(function () {
-          // Hide page 1, show page 2 and the continue button for page 2
-          $("#survey-form-page1").hide();
-          $("#survey-form-page2").show();
-          $("#continue-button-page2").show();
+        // Hide all survey pages except the first one
+        $(".survey-page").hide();
+        $("#gender-page").show();
+
+        // Gender selection form submission
+        $("#gender-continue-button").click(function (e) {
+          e.preventDefault();
+          $("#gender-page").hide();
+          $("#survey-page1").show();
         });
 
-        $("#continue-button-page2").click(function () {
-          // Hide page 2, show page 3 and the submit button
-          $("#survey-form-page2").hide();
-          $("#survey-form-page3").show();
-          $("#submit-button").show();
-       
+        // Continue button click event handler for Page 1
+        $("#survey-page1 .continue-button").click(function (e) {
+          e.preventDefault();
+          $("#survey-page1").hide();
+          $("#survey-page2").show();
+        });
+
+        // Continue button click event handler for Page 2
+        $("#survey-page2 .continue-button").click(function (e) {
+          e.preventDefault();
+          $("#survey-page2").hide();
+          $("#survey-page3").show();
+        });
+
+        // Continue button click event handler for Page 3
+        $("#survey-page3 .continue-button").click(function (e) {
+          e.preventDefault();
+          $("#survey-page3").hide();
+          $("#survey-page4").show();
         });
       });
     </script>
-
+	  
     <?php
 			$servername = "localhost";
 			$username = "root";
