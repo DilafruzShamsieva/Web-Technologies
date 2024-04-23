@@ -55,7 +55,7 @@
       }
 
       /* Add continue button styling */
-      .continue-button {
+      .continue-button, #submit-button {
         margin-top: 30px;
         padding: 15px 30px;
         background-color: #ff9800;
@@ -68,7 +68,7 @@
         transition: background-color 0.3s ease;
       }
 
-      .continue-button:hover {
+      .continue-button, #submit-button:hover {
         background-color: #f57c00;
       }
 
