@@ -391,8 +391,7 @@
       </form>
     </div>
 
-    <!-- Result section -->
-    <div id="result">
+    <div id="survey-page4" style="display: none">
       <h2>Survey Result</h2>
       <p id="result-text"></p>
     </div>
@@ -440,7 +439,9 @@
         });
 
         // Continue button click event handler for Page 3
-        $("#survey-page3 .continue-button").click(function (e) {
+       // Handle form submission
+       $("#survey-form-page3").submit(function (e) {
+          // Prevent the default form submission
           e.preventDefault();
           // Calculate the total score
           const totalScore = calculateTotalScore();
@@ -449,15 +450,19 @@
             totalScore,
             $('input[name="gender"]:checked').val()
           );
-          // Display the result
+          // Display the result on Page 4
           $("#result-text").text(
             "Your result category is: " +
               result.category +
               ". " +
               result.description
           );
-          $("#result").show();
+          // Hide previous pages and show the result page (Page 4)
+          $(".survey-page").hide();
+          $("#survey-page4").show();
         });
+
+
 
         // Handle form submission
         $("#survey-form-page3").submit(function (e) {
@@ -535,6 +540,7 @@
           let resultCategory = "Unknown";
           let description =
             "We couldn't determine your personality type based on your responses.";
+          let percentage = 0;
 
           for (const category of resultCategories) {
             if (
@@ -543,6 +549,10 @@
             ) {
               resultCategory = category.category;
               description = category.description;
+              percentage =
+                ((totalScore - category.minScore) /
+                  (category.maxScore - category.minScore)) *
+                100;
               break;
             }
           }
@@ -555,10 +565,53 @@
               " As a male, you may also exhibit leadership qualities and a preference for problem-solving.";
           }
 
-          return { category: resultCategory, description: description };
+          return {
+            category: resultCategory,
+            description: description,
+            percentage: percentage.toFixed(2),
+          };
         }
       });
     </script>
+	  
+    <?php
+    // Check if the form is submitted
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Retrieve form data
+        $gender = $_POST['gender'];
+        $scores = $_POST['scores']; // Assuming 'scores' is an array containing the ratings for each question
+    
+        // Connect to MySQL database
+        $servername = "localhost";
+        $username = "username"; // Your MySQL username
+        $password = "password"; // Your MySQL password
+        $dbname = "survey_database"; // Your MySQL database name
+    
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+    
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+    
+        // Prepare and bind SQL statement to insert survey responses
+        $stmt = $conn->prepare("INSERT INTO survey_responses (gender, score1, score2, score3, score4, score5, score6, score7, score8, score9, score10, score11, score12, score13, score14, score15) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("siiiiiiiiiiiiiii", $gender, ...$scores);
+    
+        // Execute the SQL statement
+        if ($stmt->execute() === TRUE) {
+            echo "Survey responses inserted successfully";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+    
+        // Close statement and database connection
+        $stmt->close();
+        $conn->close();
+    }
+    ?>
+
 
 	  
     <?php
