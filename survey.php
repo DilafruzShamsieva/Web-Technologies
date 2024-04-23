@@ -1,5 +1,3 @@
-<!--I have update the file please take a look at it-->
-<!--I have add the part to calculate the result-->
 <!DOCTYPE html>
 <html>
   <head>
@@ -55,7 +53,7 @@
       }
 
       /* Add continue button styling */
-      .continue-button, #submit-button {
+      .continue-button {
         margin-top: 30px;
         padding: 15px 30px;
         background-color: #ff9800;
@@ -68,7 +66,7 @@
         transition: background-color 0.3s ease;
       }
 
-      .continue-button, #submit-button:hover {
+      .continue-button:hover {
         background-color: #f57c00;
       }
 
@@ -79,6 +77,36 @@
         padding: 20px;
         border: 1px solid #ccc;
         border-radius: 10px;
+      }
+      #gender-page {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      #gender-form {
+        display: inline-block;
+      }
+
+      #gender-form input[type="radio"] {
+        margin-right: 10px;
+      }
+
+      #result {
+        text-align: center;
+        margin-top: 30px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+      }
+
+      #result h2 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      #result-text {
+        font-size: 18px;
       }
     </style>
   </head>
@@ -391,7 +419,8 @@
       </form>
     </div>
 
-    <div id="survey-page4" style="display: none">
+    <!-- Result section -->
+    <div id="result">
       <h2>Survey Result</h2>
       <p id="result-text"></p>
     </div>
@@ -439,9 +468,7 @@
         });
 
         // Continue button click event handler for Page 3
-       // Handle form submission
-       $("#survey-form-page3").submit(function (e) {
-          // Prevent the default form submission
+        $("#survey-page3 .continue-button").click(function (e) {
           e.preventDefault();
           // Calculate the total score
           const totalScore = calculateTotalScore();
@@ -450,19 +477,15 @@
             totalScore,
             $('input[name="gender"]:checked').val()
           );
-          // Display the result on Page 4
+          // Display the result
           $("#result-text").text(
             "Your result category is: " +
               result.category +
               ". " +
               result.description
           );
-          // Hide previous pages and show the result page (Page 4)
-          $(".survey-page").hide();
-          $("#survey-page4").show();
+          $("#result").show();
         });
-
-
 
         // Handle form submission
         $("#survey-form-page3").submit(function (e) {
@@ -573,95 +596,5 @@
         }
       });
     </script>
-	  
-    <?php
-    // Check if the form is submitted
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Retrieve form data
-        $gender = $_POST['gender'];
-        $scores = $_POST['scores']; // Assuming 'scores' is an array containing the ratings for each question
-    
-        // Connect to MySQL database
-        $servername = "localhost";
-        $username = "username"; // Your MySQL username
-        $password = "password"; // Your MySQL password
-        $dbname = "survey_database"; // Your MySQL database name
-    
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-    
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-    
-        // Prepare and bind SQL statement to insert survey responses
-        $stmt = $conn->prepare("INSERT INTO survey_responses (gender, score1, score2, score3, score4, score5, score6, score7, score8, score9, score10, score11, score12, score13, score14, score15) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("siiiiiiiiiiiiiii", $gender, ...$scores);
-    
-        // Execute the SQL statement
-        if ($stmt->execute() === TRUE) {
-            echo "Survey responses inserted successfully";
-        } else {
-            echo "Error: " . $stmt->error;
-        }
-    
-        // Close statement and database connection
-        $stmt->close();
-        $conn->close();
-    }
-    ?>
-
-
-	  
-    <?php
-			$servername = "localhost";
-			$username = "root";
-			$password = "";
-			
-			// Connect to MySQL Database Server Using mysqli
-		  // Object Oriented way
-			$conn = new mysqli($servername, $username, $password);
-			
-			// Check connection
-			if ($conn->connect_error) {
-				       //Print a message and terminate the current script
-					die("Connection failed: " . $conn->connect_error);
-			}
-			echo "Connected successfully";
-      echo $question1;
-      echo "<br>";
-      echo $question2;
-      echo "<br>";
-      echo $question3;
-      echo "<br>";
-      echo $question4;
-      echo "<br>";
-      echo $question5;
-      echo "<br>";
-      echo $question6;
-      echo "<br>";
-      echo $question7;
-      echo "<br>";
-      echo $question8;
-      echo "<br>";
-      echo $question9;
-      echo "<br>";
-      echo $question10;
-      echo "<br>";
-      echo $question11;
-      echo "<br>";
-      echo $question12;
-      echo "<br>";
-      echo $question13;
-      echo "<br>";
-      echo $question14;
-      echo "<br>";
-      echo $question15;
-      echo "<br>";
-
-			$conn->close(); //disconnect from the MySQL database
-		?>
-
   </body>
 </html>
