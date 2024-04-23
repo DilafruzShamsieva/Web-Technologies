@@ -34,3 +34,14 @@ button {
 #surveyQuestions {
     display: none;
 }
+.slider-container {
+    text-align: center; /* Add this line to center align the slider */
+  }
+  
+  .rating-box {
+    width: 200px;
+    height: 50px;
+    border: none;
+    display: inline-block; /* Add this line to make the rating boxes inline */
+    margin-bottom: 20px; /* Add some bottom margin for spacing */
+  }
