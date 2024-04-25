@@ -422,6 +422,7 @@
     <!-- Result section -->
     <div id="result">
       <h2>Survey Result</h2>
+      <img id="result-image" src="" alt="Result Image"> <!-- Changed-->
       <p id="result-text"></p>
     </div>
 
@@ -484,6 +485,7 @@
               ". " +
               result.description
           );
+          $("#result-image").attr("src", result.image);
           $("#result").show();
         });
 
@@ -505,6 +507,7 @@
               ". " +
               result.description
           );
+          $("#result-image").attr("src", result.image);
           $("#result").show();
           // Optionally, you can submit the form data here
         });
@@ -529,6 +532,7 @@
               maxScore: 200,
               description:
                 "You tend to be reserved and introspective, preferring to spend time alone or with close friends rather than large groups.",
+              image: "https://img.freepik.com/premium-vector/cartoon-thinking-man-vector-illustration_851674-45950.jpg",
             },
             {
               category: "Adventurous",
@@ -536,6 +540,7 @@
               maxScore: 400,
               description:
                 "You have an adventurous spirit, always seeking out new experiences and challenges to push your boundaries.",
+              image: "https://static.vecteezy.com/system/resources/thumbnails/021/823/234/small/man-character-full-body-pose-ai-generated-free-photo.jpg",
             },
             {
               category: "Empathetic",
@@ -543,6 +548,7 @@
               maxScore: 600,
               description:
                 "You are highly empathetic and compassionate, often putting the needs of others before your own and forming deep connections easily.",
+              image: "https://ortoday.com/wp-content/uploads/2022/11/web-photo-template-10-1024x640.png",
             },
             {
               category: "Analytical",
@@ -550,6 +556,7 @@
               maxScore: 800,
               description:
                 "You have a strong analytical mind, preferring logical reasoning and problem-solving to emotional intuition when making decisions.",
+              image: "https://media.istockphoto.com/id/1284636483/vector/business-analysis-tiny-characters-at-huge-monitor-with-charts-managers-analyze-information.jpg?s=612x612&w=0&k=20&c=9AvyH4tx2yw8RR3TJk1G0fk9AypcDJFYD_I4z_1P9HA=",
             },
             {
               category: "Innovative",
@@ -557,6 +564,7 @@
               maxScore: 1000,
               description:
                 "You are highly innovative and creative, constantly generating new ideas and exploring unconventional solutions to challenges.",
+              image: "https://cygnainc.com/wp-content/uploads/2021/04/vision-CyGna.png",
             },
           ];
 
@@ -576,6 +584,7 @@
                 ((totalScore - category.minScore) /
                   (category.maxScore - category.minScore)) *
                 100;
+              image = category.image;
               break;
             }
           }
@@ -592,6 +601,7 @@
             category: resultCategory,
             description: description,
             percentage: percentage.toFixed(2),
+            image: image,
           };
         }
       });
