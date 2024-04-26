@@ -165,13 +165,13 @@ $(document).ready(function () {
     }
 
     // Add gender-specific description at the beginning if gender is provided
-    if (gender === "female") {
-      description =
-        "As a female, you may also have strong nurturing instincts and empathy towards others. <br>" +
-        description;
-    } else if (gender === "male") {
+    if (gender === "male") {
       description =
         "As a male, you may also exhibit leadership qualities and a preference for problem-solving. <br>" +
+        description;
+    } else if (gender === "female") {
+      description =
+        "As a female, you may also have strong nurturing instincts and empathy towards others. <br>" +
         description;
     }
 
@@ -182,4 +182,3 @@ $(document).ready(function () {
     };
   }
 });
-
