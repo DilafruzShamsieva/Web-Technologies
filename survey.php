@@ -2,137 +2,44 @@
 <html>
   <head>
     <title>Mental Maze Survey</title>
-    <link type="text/css" rel="stylesheet" href="survey.css" />
+    <link type="text/css" rel="stylesheet" href="Survey.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="Survey.js"></script>
-
-    <style>
-      /* Your CSS styles here */
-      .rating-box {
-        width: 200px;
-        height: 50px;
-        border: none;
-        position: relative;
-        cursor: pointer;
-        overflow: hidden;
-        border-radius: 10px;
-        background: linear-gradient(to right, #5effa0, #00b4db);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      }
-
-      .rating-bar {
-        height: 100%;
-        background-color: #fff;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0%;
-        transition: width 0.3s ease;
-        border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-
-      .rating-label {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 18px;
-        color: #fff;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-      }
-
-      /* Add hover effect */
-      .rating-box:hover .rating-bar {
-        background-color: rgba(255, 255, 255, 0.9);
-      }
-
-      /* Add focus effect */
-      .rating-box:focus-within .rating-bar {
-        background-color: rgba(255, 255, 255, 0.9);
-      }
-
-      /* Add continue button styling */
-      .continue-button {
-        margin-top: 30px;
-        padding: 15px 30px;
-        background-color: #ff9800;
-        color: #fff;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        font-size: 20px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-        transition: background-color 0.3s ease;
-      }
-
-      .continue-button:hover {
-        background-color: #f57c00;
-      }
-
-      /* Result section */
-      #result {
-        display: none;
-        margin-top: 30px;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-      }
-      #gender-page {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-
-      #gender-form {
-        display: inline-block;
-      }
-
-      #gender-form input[type="radio"] {
-        margin-right: 10px;
-      }
-
-      #result {
-        text-align: center;
-        margin-top: 30px;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        background-color: #f9f9f9;
-      }
-
-      #result h2 {
-        color: #333;
-        margin-bottom: 10px;
-      }
-
-      #result-text {
-        font-size: 18px;
-      }
-    </style>
   </head>
 
   <body>
-    <h2>Welcome to Mental Maze Survey</h2>
+  <div class="container">
+  <h1>Welcome to Mental Maze Survey</h1>
+  <div class="content" id="intro-messages">
+      <p>Hello and welcome to our personality survey!</p>
+      <p>Today, we're excited to delve into the fascinating world of personality traits and preferences.</p>
+      <p>By answering a series of thought-provoking questions, you'll help us gain a deeper understanding of how you navigate social interactions, make decisions, and approach tasks.</p>
+      <p>Your participation in this survey will provide valuable insights into your unique personality, shedding light on what sets you apart from others.</p>
+      <p>Thank you for joining us on this journey of self-discovery!</p>
+      <p>Let's get started!</p>
+    </div>
     <!-- Gender Selection Page -->
     <div id="gender-page">
       <form id="gender-form">
-        <input type="radio" name="gender" value="female" />Female
-        <input type="radio" name="gender" value="male" />Male
+        <h2>Let's Begin</h2>
+        <p>To get started, we invite you to share a bit about yourself before we navigate through the maze of questions.</p>
+        <p>Select your gender to tailor your survey experience:</p>
+        <input type="radio" name="gender" id="male" value="male" /><label for="male" class="gender-label">Male</label>
+        <input type="radio" name="gender" id="female" value="female" /><label for="female" class="gender-label">Female</label>
         <button id="gender-continue-button">Continue</button>
       </form>
     </div>
 
     <!-- Survey questions - Page 1 -->
-    <div class="survey-page" id="survey-page1" style="display: none">
+    <div class="survey-page" id="survey-page1">
       <form id="survey-form-page1">
-        <!-- Add first 5 questions here -->
         <!-- Question 1 -->
         <p>
-          Question 1: You are not too interested in discussions about various
-          interpretations of creative works.
+          Q1: You enjoy solitary hobbies or activities more than group
+          ones.
         </p>
         <div class="slider-container">
-          <!-- Your rating box here -->
+          <!-- rating box here -->
           <label for="captivation-rating"></label>
           <div
             class="rating-box"
@@ -147,11 +54,11 @@
 
         <!-- Question 2 -->
         <p>
-          Question 2: You enjoy solitary hobbies or activities more than group
-          ones.
+          Q2: You would love a job that requires you to work alone most
+          of the time. 
         </p>
         <div class="slider-container">
-          <!-- Your rating box here -->
+          <!-- rating box here -->
           <label for="captivation-rating"></label>
           <div
             class="rating-box"
@@ -165,7 +72,9 @@
         </div>
 
         <!-- Question 3 -->
-        <p>Question 3: You can easily connect with people you have just met.</p>
+        <p>Q3: You feel energized after spending time alone, rather than
+          drained.
+          </p>
         <div class="slider-container">
           <!-- Your rating box here -->
           <label for="captivation-rating"></label>
@@ -181,9 +90,9 @@
         </div>
 
         <!-- Question 4 -->
-        <p>Question 4: Your emotions control you more than you control them.</p>
+        <p>Q 4:You often find yourself daydreaming or lost in thought.</p>
         <div class="slider-container">
-          <!-- Your rating box here -->
+          <!-- rating box here -->
           <label for="captivation-rating"></label>
           <div
             class="rating-box"
@@ -198,11 +107,12 @@
 
         <!-- Question 5 -->
         <p>
-          Question 5: When making decisions, you focus more on how the affected
-          people might feel than on what is most logical or efficient.
+          Q5: You prefer exploring new ideas and concepts rather than
+          sticking to familiar routines.
+          
         </p>
         <div class="slider-container">
-          <!-- Your rating box here -->
+          <!-- rating box here -->
           <label for="captivation-rating"></label>
           <div
             class="rating-box"
@@ -222,29 +132,11 @@
     </div>
 
     <!-- Survey questions - Page 2 -->
-    <div class="survey-page" id="survey-page2" style="display: none">
+    <div class="survey-page" id="survey-page2">
       <form id="survey-form-page2">
         <!-- Add next 5 questions here -->
         <p>
-          Question 6: You would love a job that requires you to work alone most
-          of the time.
-        </p>
-        <div class="slider-container">
-          <label for="captivation-rating"></label>
-          <div
-            class="rating-box"
-            id="captivation-rating"
-            data-rating="50"
-            tabindex="0"
-          >
-            <div class="rating-bar"></div>
-            <span class="rating-label">50%</span>
-          </div>
-        </div>
-
-        <br />
-        <p>
-          Question 7: You prefer tasks that require you to come up with creative
+          Q6: You prefer tasks that require you to come up with creative
           solutions rather than follow concrete steps.
         </p>
         <div class="slider-container">
@@ -262,7 +154,7 @@
 
         <br />
         <p>
-          Question 8: You are more likely to rely on emotional intuition than
+          Q7: You are more likely to rely on emotional intuition than
           logical reasoning when making a choice.
         </p>
         <div class="slider-container">
@@ -277,11 +169,11 @@
             <span class="rating-label">50%</span>
           </div>
         </div>
-        <br />
 
+        <br />
         <p>
-          Question 9: When faced with a problem, I prefer to trust my instincts
-          and jump into finding a solution.
+          Q8: When making decisions, you focus more on how the affected
+          people might feel than on what is most logical or efficient.
         </p>
         <div class="slider-container">
           <label for="captivation-rating"></label>
@@ -298,9 +190,26 @@
         <br />
 
         <p>
-          Question 10: When making plans, I tend to be spontaneous and go with
+          Q9:When making plans, I tend to be spontaneous and go with
           the flow.
+           
         </p>
+        <div class="slider-container">
+          <label for="captivation-rating"></label>
+          <div
+            class="rating-box"
+            id="captivation-rating"
+            data-rating="50"
+            tabindex="0"
+          >
+            <div class="rating-bar"></div>
+            <span class="rating-label">50%</span>
+          </div>
+        </div>
+        <br />
+
+        <p>
+          Q10: Your emotions control you more than you control them.</p>
         <div class="slider-container">
           <label for="captivation-rating"></label>
           <div
@@ -320,14 +229,29 @@
     </div>
 
     <!-- Survey questions - Page 3 -->
-    <div class="survey-page" id="survey-page3" style="display: none">
+    <div class="survey-page" id="survey-page3">
       <form id="survey-form-page3">
         <!-- Add next 5 questions here -->
-        <!-- Add a hidden input field to store the total score -->
         <input type="hidden" id="total-score" name="total-score" value="0" />
 
         <p>
-          Question 11: You find it challenging to express your emotions
+          Q11: You can easily connect with people you have just met.</p>
+        <div class="slider-container">
+          <label for="captivation-rating"></label>
+          <div
+            class="rating-box"
+            id="captivation-rating"
+            data-rating="50"
+            tabindex="0"
+          >
+            <div class="rating-bar"></div>
+            <span class="rating-label">50%</span>
+          </div>
+        </div>
+
+        <br />
+        <p>
+          Q12: You find it challenging to express your emotions
           verbally.
         </p>
         <div class="slider-container">
@@ -345,25 +269,8 @@
 
         <br />
         <p>
-          Question 12: You feel energized after spending time alone, rather than
-          drained.
-        </p>
-        <div class="slider-container">
-          <label for="captivation-rating"></label>
-          <div
-            class="rating-box"
-            id="captivation-rating"
-            data-rating="50"
-            tabindex="0"
-          >
-            <div class="rating-bar"></div>
-            <span class="rating-label">50%</span>
-          </div>
-        </div>
-
-        <br />
-        <p>
-          Question 13: You often find yourself daydreaming or lost in thought.
+          Q13: When faced with a problem, I prefer to trust my instincts
+          and jump into finding a solution.
         </p>
         <div class="slider-container">
           <label for="captivation-rating"></label>
@@ -379,8 +286,9 @@
         </div>
         <br />
         <p>
-          Question 14: You prefer exploring new ideas and concepts rather than
-          sticking to familiar routines.
+          Q14: You are not too interested in discussions about various
+          interpretations of creative works.
+          
         </p>
         <div class="slider-container">
           <label for="captivation-rating"></label>
@@ -397,7 +305,7 @@
         <br />
 
         <p>
-          Question 15: You believe that intuition plays a significant role in
+          Q15: You believe that intuition plays a significant role in
           decision-making, alongside logic and reason.
         </p>
         <div class="slider-container">
@@ -419,182 +327,55 @@
       </form>
     </div>
 
-    <!-- Result section -->
-    <div id="result">
+    <!-- Survey Result Page -->
+    <div id="survey-page4">
       <h2>Survey Result</h2>
-      <p id="result-text"></p>
+      <p>Congratulations on completing the Mental Maze Survey!</p>
+      <p>By delving into your responses, we've uncovered intriguing insights into your unique psychological makeup.</p>
+      <p>Your answers to a series of thought-provoking questions have unveiled distinct patterns, shedding light on your preferences, tendencies, and perspectives.</p>
+      <div id="result"></div>
+      
     </div>
 
     <!-- jQuery script for handling page transitions -->
-    <script>
-      $(document).ready(function () {
-        // Function to update the rating display
-        function updateRating(box, rating) {
-          box.dataset.rating = rating;
-          box.querySelector(".rating-bar").style.width = rating + "%";
-          box.querySelector(".rating-label").textContent = rating + "%";
+  
+    <?php
+    // Check if the form is submitted
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Retrieve form data
+        $gender = $_POST['gender'];
+        $scores = $_POST['scores']; // Assuming 'scores' is an array containing the ratings for each question
+    
+        // Connect to MySQL database
+        $servername = "localhost";
+        $username = "username"; // Your MySQL username
+        $password = "password"; // Your MySQL password
+        $dbname = "survey_database"; // Your MySQL database name
+    
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+    
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
         }
-
-        // Update ratings when mouse moves over rating box
-        $(".rating-box").on("mousemove", function (e) {
-          const rect = this.getBoundingClientRect();
-          const rating = Math.round(
-            ((e.clientX - rect.left) / this.offsetWidth) * 100
-          );
-          if (rating >= 0 && rating <= 100) {
-            updateRating(this, rating);
-          }
-        });
-
-        // Gender selection form submission
-        $("#gender-continue-button").click(function (e) {
-          e.preventDefault();
-          $("#gender-page").hide();
-          $("#survey-page1").show(); // Show the first page of survey questions
-        });
-
-        // Continue button click event handler for Page 1
-        $("#survey-page1 .continue-button").click(function (e) {
-          e.preventDefault();
-          $("#survey-page1").hide();
-          $("#survey-page2").show(); // Show the second page of survey questions
-        });
-
-        // Continue button click event handler for Page 2
-        $("#survey-page2 .continue-button").click(function (e) {
-          e.preventDefault();
-          $("#survey-page2").hide();
-          $("#survey-page3").show(); // Show the third page of survey questions
-        });
-
-        // Continue button click event handler for Page 3
-        $("#survey-page3 .continue-button").click(function (e) {
-          e.preventDefault();
-          // Calculate the total score
-          const totalScore = calculateTotalScore();
-          // Determine the result category and personality description
-          const result = determineResult(
-            totalScore,
-            $('input[name="gender"]:checked').val()
-          );
-          // Display the result
-          $("#result-text").text(
-            "Your result category is: " +
-              result.category +
-              ". " +
-              result.description
-          );
-          $("#result").show();
-        });
-
-        // Handle form submission
-        $("#survey-form-page3").submit(function (e) {
-          // Prevent the default form submission
-          e.preventDefault();
-          // Calculate the total score
-          const totalScore = calculateTotalScore();
-          // Determine the result category and personality description
-          const result = determineResult(
-            totalScore,
-            $('input[name="gender"]:checked').val()
-          );
-          // Display the result
-          $("#result-text").text(
-            "Your result category is: " +
-              result.category +
-              ". " +
-              result.description
-          );
-          $("#result").show();
-          // Optionally, you can submit the form data here
-        });
-
-        // Placeholder function to calculate total score
-        function calculateTotalScore() {
-          // Placeholder implementation
-          let totalScore = 0;
-          $(".rating-box").each(function () {
-            const rating = parseInt($(this).data("rating"));
-            totalScore += rating;
-          });
-          return totalScore;
+    
+        // Prepare and bind SQL statement to insert survey responses
+        $stmt = $conn->prepare("INSERT INTO survey_responses (gender, score1, score2, score3, score4, score5, score6, score7, score8, score9, score10, score11, score12, score13, score14, score15) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("siiiiiiiiiiiiiii", $gender, ...$scores);
+    
+        // Execute the SQL statement
+        if ($stmt->execute() === TRUE) {
+            echo "Survey responses inserted successfully";
+        } else {
+            echo "Error: " . $stmt->error;
         }
-
-        // Placeholder function to determine result category and personality description
-        function determineResult(totalScore, gender) {
-          const resultCategories = [
-            {
-              category: "Reserved",
-              minScore: 0,
-              maxScore: 200,
-              description:
-                "You tend to be reserved and introspective, preferring to spend time alone or with close friends rather than large groups.",
-            },
-            {
-              category: "Adventurous",
-              minScore: 201,
-              maxScore: 400,
-              description:
-                "You have an adventurous spirit, always seeking out new experiences and challenges to push your boundaries.",
-            },
-            {
-              category: "Empathetic",
-              minScore: 401,
-              maxScore: 600,
-              description:
-                "You are highly empathetic and compassionate, often putting the needs of others before your own and forming deep connections easily.",
-            },
-            {
-              category: "Analytical",
-              minScore: 601,
-              maxScore: 800,
-              description:
-                "You have a strong analytical mind, preferring logical reasoning and problem-solving to emotional intuition when making decisions.",
-            },
-            {
-              category: "Innovative",
-              minScore: 801,
-              maxScore: 1000,
-              description:
-                "You are highly innovative and creative, constantly generating new ideas and exploring unconventional solutions to challenges.",
-            },
-          ];
-
-          let resultCategory = "Unknown";
-          let description =
-            "We couldn't determine your personality type based on your responses.";
-          let percentage = 0;
-
-          for (const category of resultCategories) {
-            if (
-              totalScore >= category.minScore &&
-              totalScore <= category.maxScore
-            ) {
-              resultCategory = category.category;
-              description = category.description;
-              percentage =
-                ((totalScore - category.minScore) /
-                  (category.maxScore - category.minScore)) *
-                100;
-              break;
-            }
-          }
-
-          if (gender === "female") {
-            description +=
-              " As a female, you may also have strong nurturing instincts and empathy towards others.";
-          } else if (gender === "male") {
-            description +=
-              " As a male, you may also exhibit leadership qualities and a preference for problem-solving.";
-          }
-
-          return {
-            category: resultCategory,
-            description: description,
-            percentage: percentage.toFixed(2),
-          };
-        }
-      });
-    </script>
+    
+        // Close statement and database connection
+        $stmt->close();
+        $conn->close();
+    }
+    ?>
+    
   </body>
 </html>

@@ -1,47 +1,198 @@
-body {
-    -webkit-text-size-adjust: 100%;
-    font-family: calluna, "Times New Roman", serif;
-    color: #082730;
-    font-size: 20px;
-    line-height: 24px;
-    box-sizing: border-box;
-    margin: 0;
-    background-color: #fdf5f0;
+#survey-page1 {
+  display: none;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+#survey-page2 {
+  display: none;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+#survey-page3 {
+  display: none;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+#survey-page4 {
+  display: none;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.rating-box {
+  width: 300px;
+  height: 50px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
+  display: inline-block; /* Add this line to make the rating boxes inline */
+  margin-bottom: 20px; /* Add some bottom margin for spacing */
+  background: linear-gradient(to right, #5effa0, #00b4db);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.rating-bar {
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  transition: width 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.rating-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Add hover effect */
+.rating-box:hover .rating-bar {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Add focus effect */
+.rating-box:focus-within .rating-bar {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Add continue button styling */
+.continue-button,
+#submit-button {
+  margin-top: 30px;
+  padding: 15px 30px;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  text-align: center; /* Center the button horizontally */
+  display: block; /* Ensure the button takes up full width */
+  margin: 0 auto; /* Center the button within its container */
+}
+
+.continue-button,
+#submit-button:hover {
+  background-color: #6c5ce7;
+}
+
+/* Result section */
+#result {
+  display: none;
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.slider-container {
+  text-align: center; /* Add this line to center align the slider */
+}
+p {
+  text-align: center;
 }
 
 h2 {
-    text-align: center;
-    border-bottom: solid 2px #fff;
-    padding: 50px 10px 58px;
-    display: block;
-    padding-top: 23px;
-    padding-bottom: 22px;
+  text-align: center;
+  border-bottom: solid 2px #fff;
+  padding: 50px 10px 58px;
+  display: block;
+  padding-top: 23px;
+  padding-bottom: 22px;
+}
+/* Gender Selection Page Styling */
+#gender-page {
+  text-align: center;
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-p {
-    text-align: center;
+#gender-page,
+h2 {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #ff6b6b;
+  font-size: 28px;
+  margin-bottom: 20px;
 }
 
-input[type="text"], input[type="radio"], button {
-    display: block;
-    margin: 0 auto;
+#gender-page p {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 15px;
 }
 
-button {
-    margin-top: 10px;
+input[type="radio"] {
+  display: none;
 }
 
-#surveyQuestions {
-    display: none;
+label.gender-label {
+  display: inline-block;
+  background-color: #ff0059;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
 }
-.slider-container {
-    text-align: center; /* Add this line to center align the slider */
-  }
-  
-  .rating-box {
-    width: 200px;
-    height: 50px;
-    border: none;
-    display: inline-block; /* Add this line to make the rating boxes inline */
-    margin-bottom: 20px; /* Add some bottom margin for spacing */
-  }
+
+input[type="radio"]:checked + label.gender-label {
+  background-color: #17a2b8;
+}
+
+#gender-continue-button {
+  background-color: #17a2b8;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Arial", sans-serif;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+#gender-continue-button:hover {
+  background-color: #138496;
+}
+
+/* Header Styling */
+h1,
+#result {
+  text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #6c5ce7;
+  margin-bottom: 30px;
+}
+#survey-page4 p {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+#intro-messages {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+#intro-messages p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  color: #333;
+}
