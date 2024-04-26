@@ -24,8 +24,8 @@
         <h2>Let's Begin</h2>
         <p>To get started, we invite you to share a bit about yourself before we navigate through the maze of questions.</p>
         <p>Select your gender to tailor your survey experience:</p>
-        <input type="radio" name="gender" id="female" value="female" /><label for="female" class="gender-label">Female</label>
         <input type="radio" name="gender" id="male" value="male" /><label for="male" class="gender-label">Male</label>
+        <input type="radio" name="gender" id="female" value="female" /><label for="female" class="gender-label">Female</label>
         <button id="gender-continue-button">Continue</button>
       </form>
     </div>
