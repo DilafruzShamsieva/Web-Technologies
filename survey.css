@@ -196,3 +196,19 @@ h1,
   margin-bottom: 15px;
   color: #333;
 }
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.rating-box:hover .rating-bar {
+  background-color: coral; 
+}
+
+.rating-box:focus-within .rating-bar {
+  background-color: coral; 
+}
+
+.rating-bar.hovered {
+  background-color: coral; 
+}

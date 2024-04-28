@@ -20,7 +20,10 @@ $(document).ready(function () {
       updateRating(this, rating);
     }
   });
-
+  //Added this here so that you can have the different color to stay once you leave each answer bar
+  $('.rating-box').mouseenter(function() {
+    $(this).find('.rating-bar').addClass('hovered');
+  });
   // Gender selection form submission
   $("#gender-continue-button").click(function (e) {
     e.preventDefault();
@@ -93,6 +96,7 @@ $(document).ready(function () {
     }
 
     // Show the result section
+    $("#result-image").attr("src", result.image);
     $("#result").show();
   });
 
@@ -116,6 +120,7 @@ $(document).ready(function () {
         maxScore: 200,
         description:
           "You tend to be reserved and introspective, preferring to spend time alone or with close friends rather than large groups. You may find discussions about various interpretations of creative works less engaging and prefer solitary hobbies or activities over group ones. Connecting with new people might not come as easily to you, and you may feel that your emotions sometimes control you more than you control them. When making decisions, you may prioritize how affected people might feel over what is most logical or efficient.",
+        image: "https://img.freepik.com/premium-vector/cartoon-thinking-man-vector-illustration_851674-45950.jpg",
       },
       {
         category: "Adventurous",
@@ -123,6 +128,7 @@ $(document).ready(function () {
         maxScore: 400,
         description:
           "You have an adventurous spirit, always seeking out new experiences and challenges to push your boundaries. You enjoy solitary activities, as well as tasks that require creative solutions rather than following concrete steps. While you may rely on emotional intuition in decision-making, you are also spontaneous and tend to go with the flow when making plans. Expressing emotions verbally might not be your strong suit, but you feel energized after spending time alone and often find yourself daydreaming or lost in thought.",
+        image: "https://static.vecteezy.com/system/resources/thumbnails/021/823/234/small/man-character-full-body-pose-ai-generated-free-photo.jpg",
       },
       {
         category: "Empathetic",
@@ -137,6 +143,7 @@ $(document).ready(function () {
         maxScore: 800,
         description:
           "You have a strong analytical mind, preferring logical reasoning and problem-solving to emotional intuition when making decisions. While you may enjoy solitary activities and find it challenging to express emotions verbally, you feel energized after spending time alone. You often find yourself daydreaming or lost in thought, and you prefer exploring new ideas and concepts rather than sticking to familiar routines. When faced with a problem, you trust your instincts and jump into finding a solution.",
+        image: "https://ortoday.com/wp-content/uploads/2022/11/web-photo-template-10-1024x640.png",
       },
       {
         category: "Innovative",
@@ -144,6 +151,7 @@ $(document).ready(function () {
         maxScore: 1000,
         description:
           "You are highly innovative and creative, constantly generating new ideas and exploring unconventional solutions to challenges. You enjoy solitary activities and prefer tasks that require you to come up with creative solutions rather than follow concrete steps. While you may rely on emotional intuition in decision-making, you also believe that intuition plays a significant role alongside logic and reason. You tend to be spontaneous when making plans and prefer exploring new ideas and concepts.",
+        image: "https://cygnainc.com/wp-content/uploads/2021/04/vision-CyGna.png",
       },
     ];
 
@@ -160,6 +168,7 @@ $(document).ready(function () {
           ((totalScore - category.minScore) /
             (category.maxScore - category.minScore)) *
           100;
+        image = category.image;
         break;
       }
     }
@@ -179,6 +188,7 @@ $(document).ready(function () {
       category: resultCategory,
       description: description,
       percentage: percentage.toFixed(2),
+      image: image,
     };
   }
 });

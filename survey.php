@@ -334,6 +334,7 @@
       <p>By delving into your responses, we've uncovered intriguing insights into your unique psychological makeup.</p>
       <p>Your answers to a series of thought-provoking questions have unveiled distinct patterns, shedding light on your preferences, tendencies, and perspectives.</p>
       <div id="result"></div>
+      <img id="result-image" src="" class="center "alt="Result Image"> 
       
     </div>
 
