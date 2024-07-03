@@ -2,7 +2,7 @@
 `Software Engineering Team:` Zachary Taylor (Team Leader), Dilafruz Shamsieva, Rogena Khella, Wyatt Nugent, Gurjeet Singh
 
 # Overview:
-Mental Maze is an online survey developed as a final project for Web Technologies (CSCI 4410). The project features a comprehensive frontend and backend, including:
+Mental Maze is an online web-based survey developed as a final project for Web Technologies (CSCI 4410). The project features a comprehensive frontend and backend, including:
 
 **Frontend**: `HTML`, `CSS`, `JavaScript`, `jQuery`
 <br>
