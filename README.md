@@ -4,9 +4,9 @@
 # Overview:
 Mental Maze is an online web-based survey developed as a final project for Web Technologies (CSCI 4410). The project features a comprehensive frontend and backend, including:
 
-**Frontend**: `HTML`, `CSS`, `JavaScript`, `jQuery`
+**∙Frontend**: `HTML`, `CSS`, `JavaScript`, `jQuery`
 <br>
-Backend: `PHP`, `MySQL`
+**∙Backend**: `PHP`, `MySQL`
 <br>
 The survey consists of 15 questions, with a sliding bar interface for responses.
 
